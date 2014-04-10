@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- 下拉刷新文字定义 -->
+    <string name="drop_down_list_header_default_text">点击刷新&#8230;</string>
+    <string name="drop_down_list_header_pull_text">下拉刷新&#8230;</string>
+    <string name="drop_down_list_header_release_text">松开刷新&#8230;</string>
+    <string name="drop_down_list_header_loading_text">加载&#8230;</string>
+    <string name="drop_down_list_footer_default_text">更多</string>
+    <string name="drop_down_list_footer_loading_text">更多&#8230;</string>
+    <string name="drop_down_list_footer_no_more_text">最后一条</string>
+    <string name="selected_confrim">确认</string>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#000000ff</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#000000</color>
+    <color name="blue">#ffccddff</color>
+    <color name="red">#ffff0101</color>
+    <color name="grey">#ff58616d</color>
+    <color name="darkgrey">#ff404040</color>
+    <color name="lightgrey">#ff888888</color>
+    <color name="shape_line">#ffcccccc</color>
+    <color name="button_selected">#ff419de4</color>
+    <color name="error_msg_color">#ff0000</color>
+    <!-- 消息内容列表背景 -->
+    <color name="chat_msglist_bg">#ECF2FF</color>
+    <!-- 聊天窗口底部操作栏背景 -->
+    <color name="chat_bar_bg">#496589</color>
+    <color name="chat_media_label_bg">#6584A9</color>
+    <!-- 标题栏背景 -->
+    <color name="action_bar_bg">#D4E2F4</color>
+    <color name="button_bg_normal">#1897A7</color>
+    <color name="button_bg_pressed">#4ABDDC</color>
+    <color name="button_bg_disabled">#C1CBDE</color>
+    <!-- 消息列表首页会话条目背景 -->
+    <color name="session_item_bg">#F6F9FF</color>
+    <color name="tab_bg_normal">#496589</color>
+    <color name="tab_bg_pressed">#1D334F</color>
+    <color name="title_font_color">#4C667B</color>
+    <!-- 消息的文字颜色 -->
+    <color name="name_text_color">#4ABDCC</color>
+    <color name="common_text_color">#2F4257</color>
+    <color name="common_msg_content_color">#6A80A0</color>
+    <!-- 系统、组织等消息的背景颜色#F1F4FE -->
+    <color name="common_appbg_color">#ECF2FF</color>
+    <!-- 系统、组织等消息背景边框 -->
+    <color name="common_msgbg_border_color">#9AB5C0</color>
+    <color name="common_border_color">#BBCADB</color>
+    <color name="text_input_color">@color/black</color>
+    <color name="text_hint_color">#5A6E82</color>
+    <color name="contact_list_title">#2f4257</color>
+    <color name="contact_list_subtitle">#6a80a0</color>
+    <color name="contact_letter_catalog">#91a9c7cc</color>
+    <color name="contact_group_bg">#ECF2FF</color>
+    <color name="contacter_card_title">#d6e7f3</color>
+    <color name="contacter_card_account">#a3c0d4</color>
+    <color name="contacter_card_post">#d6e7f3</color>
+    <color name="contacter_card_bg">#2F4257</color>
+    <color name="contacter_card_left">#2f4257</color>
+    <color name="contacter_card_right">#4abdcc</color>
+    <color name="contacter_card_line">#BBCADB</color>
+    <color name="contacter_selecter_bg">#496589</color>
+    <color name="setting_user_info_name_color">#d6e7f3</color>
+    <color name="setting_user_status">#a3c0d4</color>
+    <color name="setting_title_line">#5f6a7e</color>
+    <color name="setting_content_text">#687d9d</color>
+    <color name="setting_edit_text">#b4c2d6</color>
+    <color name="setting_logout">#DB7093</color>
+    <color name="setting_item_select">#f0ffff</color>
+    <!-- 日程列表无数据时问题提示 -->
+    <color name="conference_no_msg">#a5b2c0</color>
+    <color name="add_conference_style">#687d9d</color>
+    <color name="conference_hint">#b4c2d6</color>
+    <color name="conference_user_quanshi">#687d9d</color>
+    <color name="conference_chooseable_time">#4abdcc</color>
+    
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    
+    <!-- drop down list header font color -->
+    <color name="drop_down_list_header_font_color">#000000</color>
+    <!-- drop down list header second font color -->
+    <color name="drop_down_list_header_second_font_color">#000000</color>
+    <!-- drop down list footer font color -->
+    <color name="drop_down_list_footer_font_color">#000000</color>
+    
+</resources>

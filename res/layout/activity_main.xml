@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_fragment_case_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:gravity="center">
+
+    <!-- 导航栏 -->
+    <include layout="@layout/common_action_bar" />
+
+    <!-- 搜索框 -->
+    <include layout="@layout/common_search_bar" />
+
+    <!-- 分割线 -->
+    <include layout="@layout/common_divider" />
+
+    <!-- 列表 -->
+	<include layout="@layout/common_listview_with_sidebar" />
+	
+    <!-- 底部组件 -->
+	<RelativeLayout
+    		android:layout_width="match_parent"
+    		android:layout_height="50dp"
+    		android:background="#D4D4D4"
+    		android:orientation="horizontal" >
+           
+	              <Button
+		            android:id="@+id/btn_confirm"
+		            android:layout_width="wrap_content"
+		            android:layout_height="50dp"
+		            android:background="#D4D4D4"
+		            android:layout_alignParentRight="true"
+		            android:text="@string/selected_confrim" />
+	              <View  
+    				android:id="@+id/line"
+    				android:layout_width="1dip" 
+    				android:layout_height="50dp"
+    				android:background="?android:attr/listDivider"
+    				android:layout_toLeftOf="@id/btn_confirm"
+    				android:layout_gravity="center_horizontal"/>
+	              
+                 <!--  所选参会人列表显示-->
+		         <com.gnet.demo.view.HorizontalListView
+            		android:id="@+id/horizontal_list"
+            		android:layout_width="wrap_content"
+           			android:layout_height="wrap_content"
+           			android:layout_toLeftOf="@id/line"/>
+		        
+		        
+    </RelativeLayout>
+</LinearLayout>

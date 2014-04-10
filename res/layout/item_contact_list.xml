@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="5dp" >
+
+    <!-- 首字母 -->
+
+    <TextView
+        android:id="@+id/tv_contactor_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E0E0E0"
+        android:paddingBottom="2dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:text="@string/first_letter"
+        android:textColor="#454545" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:paddingLeft="10dp"
+        android:orientation="horizontal">
+        
+          <!-- 单选框 -->
+          <CheckBox
+	       android:id="@+id/select_checked"
+	       android:layout_width="20dp"
+	       android:layout_height="wrap_content"
+	       android:text="" 
+	       android:focusable="false"   
+           android:focusableInTouchMode="false"  
+           android:layout_gravity="center"  
+           android:clickable="false" 
+           android:button="@drawable/check_selector"
+	       />
+          
+        <!-- 头像 -->
+        <ImageView
+            android:id="@+id/iv_contact_photo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"  
+            android:layout_marginLeft="5dp"
+            android:contentDescription="@string/image_content"
+            android:src="@drawable/icon_profile_default" />
+
+       
+       <!-- 联系人姓名和电话 -->
+        <LinearLayout
+            android:id="@+id/layout_user_info"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_marginLeft="5dp"
+    		android:orientation="vertical" >
+           
+                <!-- 名称 -->
+		        <TextView
+		            android:id="@+id/tv_contact_name"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="" />
+		        
+		        <TextView
+		            android:id="@+id/tv_contact_phone"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:paddingTop="10dp"
+		            android:text="" />
+		     </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

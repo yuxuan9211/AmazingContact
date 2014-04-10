@@ -1,0 +1,143 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="action_bar_title">
+        <item name="android:textColor">@color/title_font_color</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <!--
+        <item name="android:shadowColor">#4C667B</item>   
+        <item name="android:shadowDx">5</item>   
+        <item name="android:shadowDy">3</item>   
+        <item name="android:shadowRadius">6</item>
+        -->
+    </style>
+
+    <style name="action_bar_back_btn">
+        <item name="android:layout_width">40.0dip</item>
+        <item name="android:layout_height">40.0dip</item>
+        <item name="android:background">@drawable/common_backbtn</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">10dip</item>
+    </style>
+
+    <style name="main_tab_bottom">
+        <item name="android:textColor">@color/textview_color</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center</item>  
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>  
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:drawablePadding">2.0dip</item>
+        <item name="android:paddingTop">5dip</item>
+        <item name="android:paddingBottom">5dip</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@drawable/check_bottombg_selector</item>
+    </style>
+    
+    <style name="LetterCatalog">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff595c61</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">#ffced2d7</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingTop">2.0dip</item>
+        <item name="android:paddingBottom">2.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="LeftImage">
+        <item name="android:layout_width">48dip</item>
+        <item name="android:layout_height">48dip</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">10dip</item>
+    </style>
+    
+    <style name="ContactListTitlePure">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">16dip</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/contact_list_title</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">0dip</item>
+    </style>
+    
+    <style name="ContactListTitleCenter" parent="@style/ContactListTitlePure">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ContactListTitleUp" parent="@style/ContactListTitlePure">
+        <item name="android:layout_marginTop">10dip</item>
+    </style>
+
+    <style name="ContactListSubTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">16dip</item>
+        <item name="android:layout_marginTop">4dip</item>
+        <item name="android:layout_marginBottom">10dip</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/contact_list_subtitle</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:padding">0dip</item>
+    </style>
+    
+    <!-- <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style</item>
+    </style> -->
+    
+    <style name="drop_down_list_header_progress_bar_style">
+        <item name="android:minHeight">@dimen/drop_down_list_header_progress_bar_height</item>
+        <item name="android:maxHeight">@dimen/drop_down_list_header_progress_bar_height</item>
+    </style>
+
+    <style name="drop_down_list_footer_progress_bar_style">
+        <item name="android:minHeight">@dimen/drop_down_list_footer_progress_bar_height</item>
+        <item name="android:maxHeight">@dimen/drop_down_list_footer_progress_bar_height</item>
+    </style>
+
+    <style name="drop_down_list_header_font_style">
+        <item name="android:textColor">@color/drop_down_list_header_font_color</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+    <style name="drop_down_list_header_second_font_style">
+        <item name="android:textColor">@color/drop_down_list_header_second_font_color</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+
+    <style name="drop_down_list_footer_font_style">
+        <item name="android:textColor">@color/drop_down_list_footer_font_color</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+</resources>
