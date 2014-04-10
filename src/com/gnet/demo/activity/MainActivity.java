@@ -8,11 +8,13 @@ import java.util.Locale;
 import com.gnet.demo.R;
 import com.gnet.demo.adapter.ContactorAdapter;
 import com.gnet.demo.adapter.ContactorAdapter.ViewHolder;
+import com.gnet.demo.adapter.HorizontalListViewAdapter;
 import com.gnet.demo.biz.Contact;
 import com.gnet.demo.util.PinyinUtil;
 import com.gnet.demo.util.VerifyUtil;
 import com.gnet.demo.view.DropDownListView;
 import com.gnet.demo.view.DropDownListView.OnDropDownListener;
+import com.gnet.demo.view.HorizontalListView;
 import com.gnet.demo.view.SideBar;
 import com.gnet.demo.view.SideBar.OnTouchingLetterChangedListener;
 import android.net.Uri;
@@ -57,6 +59,9 @@ public class MainActivity extends Activity implements OnClickListener,
 	 private ImageButton mClearSearchText; // 清除搜索输入按钮
 	 private ContentResolver resolver = null;
 	 private ArrayList<Contact> selectedList = null;
+	 private HorizontalListView hListView = null;
+	 private HorizontalListViewAdapter hAdapter = null;
+	 
 	 
 	
 	@Override
@@ -102,6 +107,8 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		// 注册搜索事件
 		mSearchEdit.addTextChangedListener(this);
+		
+		hListView = (HorizontalListView)findViewById(R.id.horizontal_list);
 
 	}
 
@@ -226,7 +233,7 @@ public class MainActivity extends Activity implements OnClickListener,
 			public void onItemClick(AdapterView<?> arg0, View view, int position,long id) 
 			{
 			
-				Contact contact = list.get(position);
+				Contact contact = list.get(position - 1);
 				
 				ViewHolder vHollder = (ViewHolder) view.getTag();   
 				//在每次获取点击的item时将对于的checkbox状态改变，同时修改map的值。    
@@ -247,6 +254,9 @@ public class MainActivity extends Activity implements OnClickListener,
 						selectedList.remove(contact);
 					}	
 				}
+				hAdapter = new HorizontalListViewAdapter(MainActivity.this, selectedList);
+				hAdapter.notifyDataSetChanged();
+				hListView.setAdapter(hAdapter);
 			}
         });
     }  
