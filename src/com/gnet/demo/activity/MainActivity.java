@@ -8,13 +8,12 @@ import java.util.Locale;
 import com.gnet.demo.R;
 import com.gnet.demo.adapter.ContactorAdapter;
 import com.gnet.demo.adapter.ContactorAdapter.ViewHolder;
-import com.gnet.demo.adapter.HorizontalListViewAdapter;
 import com.gnet.demo.biz.Contact;
+import com.gnet.demo.util.ImageUtil;
 import com.gnet.demo.util.PinyinUtil;
 import com.gnet.demo.util.VerifyUtil;
 import com.gnet.demo.view.DropDownListView;
 import com.gnet.demo.view.DropDownListView.OnDropDownListener;
-import com.gnet.demo.view.HorizontalListView;
 import com.gnet.demo.view.SideBar;
 import com.gnet.demo.view.SideBar.OnTouchingLetterChangedListener;
 import android.net.Uri;
@@ -26,12 +25,16 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -59,11 +62,11 @@ public class MainActivity extends Activity implements OnClickListener,
 	 private ImageButton mClearSearchText; // 清除搜索输入按钮
 	 private ContentResolver resolver = null;
 	 private ArrayList<Contact> selectedList = null;
-	 private HorizontalListView hListView = null;
-	 private HorizontalListViewAdapter hAdapter = null;
+	 //private HorizontalListView hListView = null;
+	 private LinearLayout hListView = null;
+	 //private HorizontalListViewAdapter hAdapter = null;
+	 private HorizontalScrollView scrollView = null;
 	 
-	 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -74,7 +77,6 @@ public class MainActivity extends Activity implements OnClickListener,
 		selectedList = new ArrayList<Contact>();
 	}
 
-	
 	private void initView()
 	{
 		// 设置标题栏
@@ -108,8 +110,9 @@ public class MainActivity extends Activity implements OnClickListener,
 		// 注册搜索事件
 		mSearchEdit.addTextChangedListener(this);
 		
-		hListView = (HorizontalListView)findViewById(R.id.horizontal_list);
-
+		//hListView = (HorizontalListView)findViewById(R.id.horizontal_list);
+		hListView = (LinearLayout)findViewById(R.id.horizontal_list);
+		scrollView = (HorizontalScrollView)findViewById(R.id.horizontal_scroll_view);
 	}
 
 	/**
@@ -241,22 +244,34 @@ public class MainActivity extends Activity implements OnClickListener,
 				boolean checked = vHollder.checkedBox.isChecked();
 				((ContactorAdapter) mAdapter).updateCheckState(position - 1,checked);
 				((ContactorAdapter) mAdapter).notifyDataSetChanged();
+				View convertView = LayoutInflater.from(MainActivity.this).inflate(R.layout.horizontallistview_item,null);
+				ImageView imageView = (ImageView) convertView.findViewById(R.id.iv_icon);
+				imageView.setImageBitmap(ImageUtil.toRoundCorner(contact.getContactPhoto(), 30));
 				if(checked)
 				{
 					if(selectedList!= null && !selectedList.contains(contact))
 					{
 						selectedList.add(contact);
+						hListView.addView(convertView); 
+						scrollView.smoothScrollBy(100, 0);
 					}
 				}else
 				{
 					if(selectedList!= null && selectedList.contains(contact))
 					{
-						selectedList.remove(contact);
+						
+						for(int i = 0; i < selectedList.size(); i ++)
+						{
+							if(selectedList.get(i).equals(contact))
+							{
+								selectedList.remove(contact);
+								hListView.removeViewAt(i);
+								scrollView.smoothScrollBy(-100, 0);
+								break;
+							}
+						}
 					}	
 				}
-				hAdapter = new HorizontalListViewAdapter(MainActivity.this, selectedList);
-				hAdapter.notifyDataSetChanged();
-				hListView.setAdapter(hAdapter);
 			}
         });
     }  

@@ -41,12 +41,25 @@
     				android:layout_gravity="center_horizontal"/>
 	              
                  <!--  所选参会人列表显示-->
-		         <com.gnet.demo.view.HorizontalListView
+		        <!--  <com.gnet.demo.view.HorizontalListView
             		android:id="@+id/horizontal_list"
             		android:layout_width="wrap_content"
            			android:layout_height="wrap_content"
-           			android:layout_toLeftOf="@id/line"/>
-		        
+           			android:layout_toLeftOf="@id/line"/> -->
+           	    <HorizontalScrollView 
+           	        android:id="@+id/horizontal_scroll_view"
+           	        android:layout_height="wrap_content"
+					android:layout_width="fill_parent"
+					android:scrollbars="none"
+					android:layout_toLeftOf="@id/line">
+		         <LinearLayout
+            		android:id="@+id/horizontal_list"
+            		android:layout_width="wrap_content"
+           			android:layout_height="wrap_content"
+           			android:orientation="horizontal"
+           			android:scrollbars="horizontal"
+           			/>
+		         </HorizontalScrollView>
 		        
     </RelativeLayout>
 </LinearLayout>
